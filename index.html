@@ -12,8 +12,14 @@
       <div id='die2'>&nbsp;</div>
       <div id='sum'>&nbsp;</div>
       <div style='clear:left; width:100%;'>
-        <div id='roll' onClick='animateRoll();'>Roll Your Dice</div>
+        <a href="#" id='roll'>Roll Your Dice</a>
       </div>
     </div>
   </body>
 </html>
+<script>
+	$("#roll").click(function(){
+		animateRoll();
+		return false;
+	});
+</script>
