@@ -1,4 +1,4 @@
-#container{
+#grid{
     display: block;
     width: 333px;
     margin: 0 auto;
@@ -15,6 +15,7 @@
 .how_to {
     font-weight: bold;
 }
+
 table {
     border-collapse: collapse;
 }
