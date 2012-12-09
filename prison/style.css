@@ -3,9 +3,17 @@
     width: 333px;
     margin: 0 auto;
 }
-p {
-    font-family: verdana;
-    width: 50%;
+.help {
+    background: #FFC;
+    border: 2px solid #FC0;
+    padding: 15px 20px 10px;
+    margin: 5px 0 20px;
+    font-family: inherit;    
+    color: inherit;
+    text-rendering: optimizelegibility;
+}
+.how_to {
+    font-weight: bold;
 }
 table {
     border-collapse: collapse;
