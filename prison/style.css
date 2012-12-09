@@ -1,0 +1,35 @@
+#container{
+    display: block;
+    width: 333px;
+    margin: 0 auto;
+}
+p {
+    font-family: verdana;
+    width: 50%;
+}
+table {
+    border-collapse: collapse;
+}
+td {
+    background-color: #FFFFFF;
+    cursor: pointer;
+    height: 10px;
+    width: 10px;
+}
+.null {
+    cursor: default;
+}
+.wall {
+    background-color: #008080;
+    cursor: default;
+}
+.space {
+    height: 50px;
+    width: 50px;
+}
+.dot {
+    background-color: #EEEEEE;
+}
+.space:hover, .dot:hover {
+    background-color: #FFFF80;
+}

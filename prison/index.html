@@ -1,0 +1,164 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>Prison Rajat-Games</title>
+		<link href="style.css" media="screen" rel="stylesheet" type="text/css" />
+		<script src='jquery-1.8.3.min.js' type='text/javascript'></script>
+		<script src='prison.js' type='text/javascript'></script>
+	</head>
+    <body>
+    <p class="help">
+        You are the master-mind of your gang, Police has captured your mates, and you need to free them..<br />
+        You have a grid of the cell map, every green bar is a wall..<br />
+        You can click on a cell to remove all 4 sorrounding walls aroud it..
+        Or click on the intersection of 4 walls, to remove all 4 walls around it..<br />
+        You need to remove all walls..Good Luck!!
+    </p>
+    <div id="container">
+    <table>
+      <tr>
+        <td id="r0c0" class="null"></td>
+        <td id="r0c1" class="wall"></td>
+        <td id="r0c2" class="null"></td>
+        <td id="r0c3" class="wall"></td>
+        <td id="r0c4" class="null"></td>
+        <td id="r0c5" class="wall"></td>
+        <td id="r0c6" class="null"></td>
+        <td id="r0c7" class="wall"></td>
+        <td id="r0c8" class="null"></td>
+        <td id="r0c9" class="wall"></td>
+        <td id="r0c10" class="null"></td>
+      </tr>
+      <tr>
+        <td id="r1c0" class="wall"></td>
+        <td id="r1c1" class="space"></td>
+        <td id="r1c2" class="wall"></td>
+        <td id="r1c3" class="space"></td>
+        <td id="r1c4" class="wall"></td>
+        <td id="r1c5" class="space"></td>
+        <td id="r1c6" class="wall"></td>
+        <td id="r1c7" class="space"></td>
+        <td id="r1c8" class="wall"></td>
+        <td id="r1c9" class="space"></td>
+        <td id="r1c10" class="wall"></td>
+      </tr>
+      <tr>
+        <td id="r2c0" class="null"></td>
+        <td id="r2c1" class="wall"></td>
+        <td id="r2c2" class="dot"></td>
+        <td id="r2c3" class="wall"></td>
+        <td id="r2c4" class="dot"></td>
+        <td id="r2c5" class="wall"></td>
+        <td id="r2c6" class="dot"></td>
+        <td id="r2c7" class="wall"></td>
+        <td id="r2c8" class="dot"></td>
+        <td id="r2c9" class="wall"></td>
+        <td id="r2c10" class="null"></td>
+      </tr>
+      <tr>
+        <td id="r3c0" class="wall"></td>
+        <td id="r3c1" class="space"></td>
+        <td id="r3c2" class="wall"></td>
+        <td id="r3c3" class="space"></td>
+        <td id="r3c4" class="wall"></td>
+        <td id="r3c5" class="space"></td>
+        <td id="r3c6" class="wall"></td>
+        <td id="r3c7" class="space"></td>
+        <td id="r3c8" class="wall"></td>
+        <td id="r3c9" class="space"></td>
+        <td id="r3c10" class="wall"></td>
+      </tr>
+      <tr>
+        <td id="r4c0" class="null"></td>
+        <td id="r4c1" class="wall"></td>
+        <td id="r4c2" class="dot"></td>
+        <td id="r4c3" class="wall"></td>
+        <td id="r4c4" class="dot"></td>
+        <td id="r4c5" class="wall"></td>
+        <td id="r4c6" class="dot"></td>
+        <td id="r4c7" class="wall"></td>
+        <td id="r4c8" class="dot"></td>
+        <td id="r4c9" class="wall"></td>
+        <td id="r4c10" class="null"></td>
+      </tr>
+      <tr>
+        <td id="r5c0" class="wall"></td>
+        <td id="r5c1" class="space"></td>
+        <td id="r5c2" class="wall"></td>
+        <td id="r5c3" class="space"></td>
+        <td id="r5c4" class="wall"></td>
+        <td id="r5c5" class="space"></td>
+        <td id="r5c6" class="wall"></td>
+        <td id="r5c7" class="space"></td>
+        <td id="r5c8" class="wall"></td>
+        <td id="r5c9" class="space"></td>
+        <td id="r5c10" class="wall"></td>
+      </tr>
+      <tr>
+        <td id="r6c0" class="null"></td>
+        <td id="r6c1" class="wall"></td>
+        <td id="r6c2" class="dot"></td>
+        <td id="r6c3" class="wall"></td>
+        <td id="r6c4" class="dot"></td>
+        <td id="r6c5" class="wall"></td>
+        <td id="r6c6" class="dot"></td>
+        <td id="r6c7" class="wall"></td>
+        <td id="r6c8" class="dot"></td>
+        <td id="r6c9" class="wall"></td>
+        <td id="r6c10" class="null"></td>
+      </tr>
+      <tr>
+        <td id="r7c0" class="wall"></td>
+        <td id="r7c1" class="space"></td>
+        <td id="r7c2" class="wall"></td>
+        <td id="r7c3" class="space"></td>
+        <td id="r7c4" class="wall"></td>
+        <td id="r7c5" class="space"></td>
+        <td id="r7c6" class="wall"></td>
+        <td id="r7c7" class="space"></td>
+        <td id="r7c8" class="wall"></td>
+        <td id="r7c9" class="space"></td>
+        <td id="r7c10" class="wall"></td>
+      </tr>
+      <tr>
+        <td id="r8c0" class="null"></td>
+        <td id="r8c1" class="wall"></td>
+        <td id="r8c2" class="dot"></td>
+        <td id="r8c3" class="wall"></td>
+        <td id="r8c4" class="dot"></td>
+        <td id="r8c5" class="wall"></td>
+        <td id="r8c6" class="dot"></td>
+        <td id="r8c7" class="wall"></td>
+        <td id="r8c8" class="dot"></td>
+        <td id="r8c9" class="wall"></td>
+        <td id="r8c10" class="null"></td>
+      </tr>
+      <tr>
+        <td id="r9c0" class="wall"></td>
+        <td id="r9c1" class="space"></td>
+        <td id="r9c2" class="wall"></td>
+        <td id="r9c3" class="space"></td>
+        <td id="r9c4" class="wall"></td>
+        <td id="r9c5" class="space"></td>
+        <td id="r9c6" class="wall"></td>
+        <td id="r9c7" class="space"></td>
+        <td id="r9c8" class="wall"></td>
+        <td id="r9c9" class="space"></td>
+        <td id="r9c10" class="wall"></td>
+      </tr>
+      <tr>
+        <td id="r10c0" class="null"></td>
+        <td id="r10c1" class="wall"></td>
+        <td id="r10c2" class="null"></td>
+        <td id="r10c3" class="wall"></td>
+        <td id="r10c4" class="null"></td>
+        <td id="r10c5" class="wall"></td>
+        <td id="r10c6" class="null"></td>
+        <td id="r10c7" class="wall"></td>
+        <td id="r10c8" class="null"></td>
+        <td id="r10c9" class="wall"></td>
+        <td id="r10c10" class="null"></td>
+      </tr>
+    </table>
+    </div>
+    </body>
+</html>
