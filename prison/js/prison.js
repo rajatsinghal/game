@@ -78,11 +78,12 @@ function updateDisplayTimeLeft() {
     var minutes_left = parseInt(seconds_left / 60);
     var f_seconds_left = seconds_left % 60;
     var time_left_string = '';
-    if(minutes_left < 9)
+    if(minutes_left <= 9)
         minutes_left = "0" + minutes_left;
-    if(f_seconds_left < 9)
+    if(f_seconds_left <= 9)
         f_seconds_left = "0" + f_seconds_left;    
     time_left_string = minutes_left + ':' + f_seconds_left;
+    time_left_string = time_left_string + ' left';
     $("#time_left").html(time_left_string);
 }
 
