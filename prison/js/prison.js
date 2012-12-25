@@ -61,6 +61,8 @@ function startCountDown() {
 function updateCountDown() {
     if(can_attempt)
         seconds_left--;
+    if(seconds_left == 0)
+        can_attempt = false;
     updateDisplayTimeLeft();
     if(can_attempt)
         setTimeout(function(){updateCountDown()},1000);
