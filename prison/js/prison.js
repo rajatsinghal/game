@@ -67,12 +67,13 @@ function updateCountDown() {
 }
 
 function updateDisplayTimeLeft() {
-    var minutes_left = seconds_left % 60;
+    var minutes_left = seconds_left / 60;
+    var f_seconds_left = seconds_left % 60;
     var time_left_string = '';
     if(minutes_left == 0)
         time_left_string = ':'+seconds_left;
     else
-        time_left_string = minutes_left + ':' + seconds_left;
+        time_left_string = minutes_left + ':' + f_seconds_left;
     $("#time_left").html(time_left_string);
 }
 
