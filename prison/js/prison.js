@@ -52,7 +52,7 @@ function checkIfSolved() {
     return solved;
 }
 
-function startCountDownn() {
+function startCountDown() {
     $("#seconds_left").val(seconds_left);
     setTimeout(function(){updateCountDown()},1000);
 }
