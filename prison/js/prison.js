@@ -67,7 +67,7 @@ function updateCountDown() {
 }
 
 function updateDisplayTimeLeft() {
-    var minutes_left = seconds_left / 60;
+    var minutes_left = parseInt(seconds_left / 60);
     var f_seconds_left = seconds_left % 60;
     var time_left_string = '';
     if(minutes_left == 0)
