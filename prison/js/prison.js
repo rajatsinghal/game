@@ -66,7 +66,7 @@ function updateCountDown() {
         setTimeout(function(){updateCountDown()},1000);
 }
 
-updateDisplayTimeLeft() {
+function updateDisplayTimeLeft() {
     var minutes_left = seconds_left % 60;
     var time_left_string = '';
     if(minutes_left == 0)
