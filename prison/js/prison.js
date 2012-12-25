@@ -53,7 +53,7 @@ function checkIfSolved() {
 }
 
 function startCountDown() {
-    $("#seconds_left").val(seconds_left);
+    $("#seconds_left").html(seconds_left);
     $("#seconds_left").show();
     setTimeout(function(){updateCountDown()},1000);
 }
@@ -61,7 +61,7 @@ function startCountDown() {
 function updateCountDown() {
     if(can_attempt)
         seconds_left--;
-    $("#seconds_left").val(seconds_left);
+    $("#seconds_left").html(seconds_left);
     if(can_attempt)
         setTimeout(function(){updateCountDown()},1000);
 }
