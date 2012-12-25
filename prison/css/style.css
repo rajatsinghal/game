@@ -42,3 +42,9 @@ td {
 .space:hover, .dot:hover {
     background-color: #FFFF80;
 }
+.time_left {
+    margin-right: 18px;
+}
+.attempts {
+    margin-left: 18px;
+}
