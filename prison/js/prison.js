@@ -53,17 +53,27 @@ function checkIfSolved() {
 }
 
 function startCountDown() {
-    $("#seconds_left").html(seconds_left);
-    $("#seconds_left").show();
+    updateDisplayTimeLeft();
+    $("#time_left").show();
     setTimeout(function(){updateCountDown()},1000);
 }
 
 function updateCountDown() {
     if(can_attempt)
         seconds_left--;
-    $("#seconds_left").html(seconds_left);
+    updateDisplayTimeLeft();
     if(can_attempt)
         setTimeout(function(){updateCountDown()},1000);
+}
+
+updateDisplayTimeLeft() {
+    var minutes_left = seconds_left % 60;
+    var time_left_string = '';
+    if(minutes_left == 0)
+        time_left_string = ':'+seconds_left;
+    else
+        time_left_string = minutes left + ':' + seconds_left;
+    $("#time_left").html(time_left_string);
 }
 
 $(document).ready(function(){
