@@ -54,6 +54,7 @@ function checkIfSolved() {
 
 function startCountDown() {
     $("#seconds_left").val(seconds_left);
+    $("#seconds_left").show();
     setTimeout(function(){updateCountDown()},1000);
 }
 
