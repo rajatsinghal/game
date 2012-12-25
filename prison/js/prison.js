@@ -62,10 +62,16 @@ function updateCountDown() {
     if(can_attempt)
         seconds_left--;
     if(seconds_left == 0)
-        can_attempt = false;
+        setTimeOver();
     updateDisplayTimeLeft();
     if(can_attempt)
         setTimeout(function(){updateCountDown()},1000);
+}
+
+function setTimeOver() {
+    can_attempt = false;
+    $("#grid").hide();
+    $("#time_over").show();
 }
 
 function updateDisplayTimeLeft() {
