@@ -28,6 +28,7 @@ var solved_grid = [
 
 var attempts = 0;
 var can_attempt = false;
+var seconds_left = 180;
 
 function toggle(r, c) {
     if (grid[r][c]) {
@@ -51,11 +52,25 @@ function checkIfSolved() {
     return solved;
 }
 
+function startCountDownn() {
+    $("#seconds_left").val(seconds_left);
+    setTimeout(function(){updateCountDown()},1000);
+}
+
+function updateCountDown() {
+    if(can_attempt)
+        seconds_left--;
+    $("#seconds_left").val(seconds_left);
+    if(can_attempt)
+        setTimeout(function(){updateCountDown()},1000);
+}
+
 $(document).ready(function(){
     $("#start_game").click(function() {
         can_attempt = true;
         $(this).hide();
         $("#attempts").show();
+        startCountDown();
         return false;
     });
 
