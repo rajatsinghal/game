@@ -72,7 +72,7 @@ function updateDisplayTimeLeft() {
     if(minutes_left == 0)
         time_left_string = ':'+seconds_left;
     else
-        time_left_string = minutes left + ':' + seconds_left;
+        time_left_string = minutes_left + ':' + seconds_left;
     $("#time_left").html(time_left_string);
 }
 
