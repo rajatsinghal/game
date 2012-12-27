@@ -110,12 +110,12 @@ var prisonGame = function() {
         setTimeout(function(){game.updateCountDown()},1000);
     }
     game.updateCountDown = function () {
-        if(can_attempt)
+        if(game.can_attempt)
             game.seconds_left--;
-        if(seconds_left == 0)
+        if(game.seconds_left == 0)
             game.setTimeOver();
-        renderTimeLeft();
-        if(can_attempt)
+        game.renderTimeLeft();
+        if(game.can_attempt)
             setTimeout(function(){game.updateCountDown()},1000);
     }
     game.setTimeOver = function () {
