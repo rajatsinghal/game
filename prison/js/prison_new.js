@@ -32,8 +32,7 @@ var prisonGame = function() {
         game.seconds_left = 180;
     }
     game.start = function() {
-        game.can_attempt = true;
-        $(this).hide();
+        game.can_attempt = true;        
         game.showAttempts();
         game.startCountDown();
     }
@@ -57,9 +56,9 @@ var prisonGame = function() {
     }
     game.togglePrison = function (r, c) {
         if(game.prisons[r][c])
-            openPrison(r, c);
+            game.openPrison(r, c);
         else
-            closePrison(r, c);
+            game.closePrison(r, c);
         game.prisons[r][c] = 1 - game.prisons[r][c];
     }
     game.openPrison = function (r, c) {
@@ -135,7 +134,8 @@ $(document).ready(function(){
     var prison_game = new prisonGame();
     prison_game.initGame();
     $("#start_game").click(function() {
-        prison_game.start();    
+        prison_game.start();
+        $(this).hide();
         return false;
     });
     $('td').click(function(){
