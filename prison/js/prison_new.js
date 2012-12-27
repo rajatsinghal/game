@@ -101,7 +101,7 @@ var prisonGame = function() {
         time_left_string = time_left_string + ' left';
         $("#time_left").html(time_left_string);
     }
-    game.showTimeLeft() {
+    game.showTimeLeft = function() {
         $("#time_left").show();
     }
     game.startCountDown = function () {
