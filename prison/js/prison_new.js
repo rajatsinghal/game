@@ -132,7 +132,7 @@ var prisonGame = function() {
 
 
 $(document).ready(function(){
-    var prison_game = new PrisonGame();
+    var prison_game = new prisonGame();
     prison_game.initGame();
     $("#start_game").click(function() {
         prison_game.start();    
