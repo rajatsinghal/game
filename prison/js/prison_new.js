@@ -41,7 +41,7 @@ var prisonGame = function() {
         if(game.can_attempt && ($(element).hasClass('space') || $(element).hasClass('dot'))) {
             var r = $(element).attr('id').substring(1, 2);
             var c = $(element).attr('id').substring(3, 4);
-            prisonOrCornerClicked(r, c);            
+            game.prisonOrCornerClicked(r, c);            
         }
     }
     game.prisonOrCornerClicked = function (r, c) {
@@ -56,11 +56,11 @@ var prisonGame = function() {
         }
     }
     game.togglePrison = function (r, c) {
-        if(prisons[r][c])
+        if(game.prisons[r][c])
             openPrison(r, c);
         else
             closePrison(r, c);
-        prisons[r][c] = 1 - prisons[r][c];
+        game.prisons[r][c] = 1 - game.prisons[r][c];
     }
     game.openPrison = function (r, c) {
         var prison_id = '#r' + r + 'c' + c;
@@ -72,9 +72,9 @@ var prisonGame = function() {
     } 
     game.checkIfSolved = function () {
         var solved = true;
-        $.each(prisons, function(i, inner_array) {
+        $.each(game.prisons, function(i, inner_array) {
             $.each(inner_array, function(j, val) {
-                if(val != all_prisons_open[i][j])
+                if(val != game.all_prisons_open[i][j])
                     solved = false;
             });
         });
@@ -90,8 +90,8 @@ var prisonGame = function() {
         game.attempts++;
     }
     game.renderTimeLeft = function () {
-        var minutes_left = parseInt(seconds_left / 60);
-        var f_seconds_left = seconds_left % 60;
+        var minutes_left = parseInt(game.seconds_left / 60);
+        var f_seconds_left = game.seconds_left % 60;
         var time_left_string = '';
         if(minutes_left <= 9)
             minutes_left = "0" + minutes_left;
@@ -107,24 +107,24 @@ var prisonGame = function() {
     game.startCountDown = function () {
         game.renderTimeLeft();
         game.showTimeLeft();
-        setTimeout(function(){updateCountDown()},1000);
+        setTimeout(function(){game.updateCountDown()},1000);
     }
     game.updateCountDown = function () {
         if(can_attempt)
-            seconds_left--;
+            game.seconds_left--;
         if(seconds_left == 0)
-            setTimeOver();
+            game.setTimeOver();
         renderTimeLeft();
         if(can_attempt)
-            setTimeout(function(){updateCountDown()},1000);
+            setTimeout(function(){game.updateCountDown()},1000);
     }
     game.setTimeOver = function () {
-        can_attempt = false;
+        game.can_attempt = false;
         $("#grid").hide();
         $("#time_over").show();
     }
     game.setSolved = function () {
-        can_attempt = false;
+        game.can_attempt = false;
         $("#grid").hide();
         $("#completed").show();
     }    
