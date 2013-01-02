@@ -37,7 +37,7 @@ var prisonGame = function() {
     }
     game.registerStartButtonCallBack = function() {
         game.start_button.click(function() {
-            prison_game.start();
+            game.start();
             $(this).hide();
             return false;
         });
