@@ -30,14 +30,31 @@ var prisonGame = function() {
         game.attempts = 0;
         game.can_attempt = false;
         game.seconds_left = 180;
+        game.start_button = $("#start_game");
+        game.prisons_and_corners = $(".space, .dot");
+        game.registerStartButtonCallBack();
+        game.registerPrisonAndCornerClickAttemptCallBack();
     }
+    game.registerStartButtonCallBack = function() {
+        game.start_button.click(function() {
+            prison_game.start();
+            $(this).hide();
+            return false;
+        });
+    }
+    game.registerPrisonAndCornerClickAttemptCallBack = function() {
+        game.prisons_and_corners.click(function() {
+            game.checkAndAttemptIfAllowed(this);
+            return false;
+        });
+    }    
     game.start = function() {
         game.can_attempt = true;        
         game.showAttempts();
         game.startCountDown();
     }
-    game.checkIfPrisonOrCornerAndAttemptIfAllowed = function(element) {
-        if(game.can_attempt && ($(element).hasClass('space') || $(element).hasClass('dot'))) {
+    game.checkAndAttemptIfAllowed = function(element) {
+        if(game.can_attempt) {
             var r = $(element).attr('id').substring(1, 2);
             var c = $(element).attr('id').substring(3, 4);
             game.prisonOrCornerClicked(r, c);            
@@ -133,12 +150,4 @@ var prisonGame = function() {
 $(document).ready(function(){
     var prison_game = new prisonGame();
     prison_game.initGame();
-    $("#start_game").click(function() {
-        prison_game.start();
-        $(this).hide();
-        return false;
-    });
-    $('td').click(function(){
-        prison_game.checkIfPrisonOrCornerAndAttemptIfAllowed(this);
-    });
 });
